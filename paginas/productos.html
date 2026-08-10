@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos — Market Rojo Danés</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+  <link rel="stylesheet" href="../css/productos.css">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav id="navbar">
+    <div class="logo">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="logo-rojo">Rojo</span>
+        <span class="logo-danes"> Danés</span>
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <a href="../index.html">Inicio</a>
+      <a href="productos.html" class="nav-activo">Productos</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+    </ul>
+
+    <div class="nav-acciones" id="navAcciones">
+      <div id="botonesAuth">
+        <button id="btnLogin"
+          onclick="window.location.href='login.html'">
+          Iniciar sesión
+        </button>
+        <button id="btnRegistro"
+          onclick="window.location.href='registro.html'">
+          Regístrate
+        </button>
+      </div>
+
+      <div id="panelUsuario" class="oculto">
+        <div class="usuario-nav" onclick="toggleMenu()">
+          <div class="usuario-foto" id="fotoNav"></div>
+          <span class="usuario-nombre" id="nombreNav"></span>
+          <span class="menu-hamburguesa">☰</span>
+        </div>
+        <div class="menu-desplegable oculto" id="menuDesplegable">
+          <a href="perfil.html">👤 Mi perfil</a>
+          <a href="pedidos.html">📦 Mis pedidos</a>
+          <div class="menu-separador"></div>
+          <a href="#" onclick="cerrarSesion()" class="menu-salir">
+            🚪 Cerrar sesión
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ENCABEZADO -->
+  <div class="productos-header">
+    <h1>Nuestros <span class="texto-rojo">Productos</span></h1>
+    <p>Encuentra todo lo que necesitas en un solo lugar</p>
+  </div>
+
+  <!-- BUSCADOR -->
+  <div class="productos-buscador">
+    <div class="buscador-contenedor">
+      <span class="buscador-icono">🔍</span>
+      <input
+        type="text"
+        id="inputBusqueda"
+        placeholder="¿Qué estás buscando?">
+      <button id="btnBuscar">Buscar</button>
+    </div>
+  </div>
+
+  <!-- LAYOUT DE PRODUCTOS -->
+  <div class="productos-layout">
+
+    <!-- PANEL DE CATEGORÍAS -->
+    <aside class="sidebar-categorias">
+      <h3>Categorías</h3>
+      <div class="lista-categorias lista-categorias-vertical" id="listaCategorias"></div>
+    </aside>
+
+    <!-- GRILLA DE PRODUCTOS -->
+    <div class="productos-contenido">
+
+      <!-- OTGANIZADOR -->
+      <div class="productos-meta">
+        <span id="contadorResultados">Cargando productos...</span>
+        <select id="ordenar" onchange="ordenarProductos()">
+          <option value="default">Ordenar por...</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="nombre">Nombre A-Z</option>
+        </select>
+      </div>
+
+      <div id="grilla-productos"></div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Rojo Danés. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Carrito flotante -->
+  <button id="btnCarrito">
+    🛒
+    <span id="contadorCarrito"></span>
+  </button>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/checkout.js"></script>
+  <script src="../js/productos.js"></script>
+
+</body>
+</html>

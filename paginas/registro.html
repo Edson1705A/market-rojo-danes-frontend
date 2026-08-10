@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registrate - Market Rojo Danés</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="pagina-auth">
+	<div class="auth-contenedor">
+		<!-- LADO IZQUIERDO -->
+		<div class="auth-izquierda">
+			<a href="../index.html" class="auth-logo">
+				<span class="logo-rojo">Rojo</span>
+				<span class="logo-danes"> Danes</span>
+			</a>
+			<p class="auth-bienvenida">
+				Crea tu cuenta gratis<br>y empieza a comprar hoy.
+			</p>
+			<button class="btn-social btn-facebook" onclick="authFacebook('registro')">
+  				<img src="https://www.facebook.com/favicon.ico" alt="Facebook" width="20">
+  				Registrarse con Facebook
+			</button>
+			<div class="separador">
+				<span>o crea tu cuenta con correo</span>
+			</div>
+			<p class="texto-cambio">
+				¿Ya tienes cuenta?
+				<a href="login.html" class="link-auth">Iniciar sesión</a>
+			</p>
+			<a href="../index.html" class="link-volver">◄ Volver a la tienda</a>
+		</div>
+
+		<!-- LADO DERECHO -->
+		<div class="auth-derecha">
+			<h1>Crear Cuenta</h1>
+			<p class="auth-subtitulo">Completa tus datos para registrarte</p>
+
+			<div id="mensajeError" class="mensaje-error oculto"></div>
+			<div id="mensajeExito" class="mensaje-exito oculto"></div>
+
+			<!-- CAMPO DE NOMBRES -->
+			<div class="campo-grupo">
+				<label for="inputNombre">Nombre Completo</label>
+				<input 
+					type="text" 
+					id="inputNombre" 
+					placeholder="Tu nombre" 
+					autocomplete="name">
+			</div>
+
+			<!-- NOMBRE DE USUARIO -->
+			<div class="campo-grupo">
+				<label for="inputUsername">Nombre de usario</label>
+				<input 
+					type="text" 
+					id="inputUsername" 
+					placeholder="username" 
+					autocomplete="username">
+			</div>
+
+			<!-- CORREO -->
+			<div class="campo-grupo">
+				<label for="inputCorreo">Correo electrónico</label>
+				<input 
+					type="email" 
+					id="inputCorreo" 
+					placeholder="ejemplo@correo.com" 
+					autocomplete="email">
+			</div>
+
+			<!-- TELÉFONO -->
+			<div class="campo-grupo">
+				<label for="inputTelefono">Teléfono (opcional)</label>
+				<input 
+					type="tel" 
+					id="inputTelefono" 
+					placeholder="+51 999 999 999" 
+					autocomplete="tel">
+			</div>
+
+			<!-- DNI -->
+			<div class="campo-grupo">
+  				<label for="inputDni">DNI <span style="color:#bbb;font-weight:400;">(opcional)</span></label>
+  				<input type="text" id="inputDni" placeholder="12345678" maxlength="8">
+			</div>
+
+			<!-- CONTRASEÑA -->
+			<div class="campo-grupo">
+				<label for="inputPassword">Contraseña</label>
+				<div class="input-pass-contenedor">
+					<input 
+						type="password" 
+						id="inputPassword" 
+						placeholder="Mínimo 6 caracteres" 
+						autocomplete="new-password">
+					<button class="btn-ojo" type="button"
+						onclick="verPassword('inputPassword')">👁</button>
+				</div>
+
+				<!-- BARRA DE SEGURIDAD -->
+				<div class="barra-seguridad">
+					<div class="barra-progreso" id="barraSeguridad"></div>
+				</div>
+				<span class="texto-seguridad" id="textoSeguridad"></span>
+			</div>
+
+			<!-- CONFIRMAR CONTRASEÑA -->
+			<div class="campo-grupo">
+				<label for="inputConfirmar">Confirmar contraseña</label>
+				<div class="input-pass-contenedor">
+					<input 
+						type="password" 
+						id="inputConfirmar" 
+						placeholder="Repite tu contraseña" 
+						autocomplete="new-password">
+					<button class="btn-ojo" type="button"
+						onclick="verPassword('inputConfirmar')">👁</button>
+				</div>
+			</div>
+
+			<!-- TÉRMINOS Y CONDICIONES -->
+			<div class="campo-check">
+				<input type="checkbox" id="checkTerminos">
+				<label for="checkTerminos">
+					Acepto los <a href="#" class="link-auth"> Términos de uso</a>
+					y la <a href="#" class="link-auth">Política de privacidad</a>
+				</label>
+			</div>
+
+			<button class="btn-auth" onclick="registrarse()">
+				Crear mi cuenta
+			</button>
+		</div>
+	</div>
+
+	<script src="../js/api.js"></script>
+	<script src="../js/auth.js"></script>
+
+</body>
+</html>

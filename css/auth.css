@@ -1,0 +1,314 @@
+/*Página Completa*/
+.pagina-auth {
+	min-height: 100vh;
+	background: #f5f5f5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+ .auth-contenedor {
+ 	display: grid;
+ 	grid-template-columns: 1fr 1fr;
+ 	max-width: 900px;
+ 	width: 100%;
+ 	background: white;
+ 	border-radius: 20px;
+ 	overflow: hidden;
+ 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+ }
+  /*LADO IZQUIERDO*/
+  .auth-izquierda {
+  	background: var(--rojo, #C62B0C);
+  	padding: 50px 40px;
+  	display: flex;
+  	flex-direction: column;
+  	gap: 18px;
+  }
+  .auth-logo {
+  	text-decoration: none;
+  	font-size: 2rem;
+  	font-weight: 900;
+  	font-family: 'Segoe UI', sans-serif;
+  }
+  .auth-logo .logo-rojo {color: white; }
+  .auth-logo .logo-danes {color: rgba(255, 255, 255, 0.7); font-weight: 300; }
+  .auth-bienvenida {
+  	color: rgba(255, 255, 255, 0.9);
+  	font-size: 1.05rem;
+  	line-height: 1.6;
+  }
+
+  /*REDES SOCIALES*/
+  .btn-social {
+  	display: flex;
+  	align-items: center;
+  	gap: 12px;
+  	padding: 13px 18px;
+  	border-radius: 10px;
+  	border: none;
+  	cursor: pointer;
+  	font-size: 0.92rem;
+  	font-weight: 600;
+  	transition: transform 0.2s, box-shadow 0.2s;
+  	width: 100%;
+  }
+  .btn-social:hover {
+  	transform: translateY(-2px);
+  	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  }
+  .btn-google {
+  	background: white;
+  	color: #333;
+  }
+  .btn-facebook {
+  	background: #1877f2;
+  	color: white;
+  }
+
+  /*SEPARADOR*/
+  .separador {
+  	display: flex;
+  	align-items: center;
+  	gap: 10px;
+  	color: rgba(255, 255, 255, 0.6);
+  	font-size: 0.82rem;
+  }
+  .separador::before,
+  .separador::after {
+  	content: "";
+  	flex: 1;
+  	height: 1px;
+  	background: rgba(255, 255, 255, 0.3);
+  }
+  .texto.cambio {
+  	color: rgba(255, 255, 255, 0.85);
+  	font-size: 0.88rem;
+  }
+
+  .auth-izquierda .link-auth {
+  	color: white;
+  	font-weight: 700;
+  	text-decoration: underline;
+  }
+  .auth-derecha .link-auth {
+  	color: var(--rojo, #C62B0C);
+  	font-weight: 700;
+  	text-decoration: none;
+  }
+  .auth-derecha .link-auth:hover {
+  	text-decoration: underline;
+  }
+  .link-volver {
+  	color: rgba(255, 255, 255, 0.55);
+  	font-size: 0.82rem;
+  	text-decoration: none;
+  	margin-top: auto;
+  	transition: color 0.2s;
+  }
+  .link-volver:hover { color:white; }
+
+  /*LADO DERECHO*/
+  .auth-derecha {
+  	padding: 45px 42px;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	gap: 14px;
+  }
+  .auth-derecha h1 {
+  	font-size: 1.85rem;
+  	font-weight: 800;
+  	color: #222;
+  }
+  .auth-subtitulo {
+  	color: #999;
+  	font-size: 0.9rem;
+  	margin-top: -8px;
+  }
+  
+  /*FORMULARIO*/
+  .campo-grupo {
+  	display: flex;
+  	flex-direction: column;
+  	gap: 5px;
+  }
+  .campo-grupo label {
+  	font-size: 0.78rem;
+  	font-weight: 700;
+  	color: #666;
+  	text-transform: uppercase;
+  	letter-spacing: 0.05em;
+  }
+  .campo-grupo input {
+  	padding: 12px 15px;
+  	border: 2px solid #e0e0e0;
+  	border-radius: 10px;
+  	font-size: 0.95rem;
+  	font-family: 'Segoe UI' sans-serif;
+  	outline: none;
+  	transition: border-color 0.2s;
+  	width: 100%;
+  }
+  .campo-grupo input:focus {
+  	border-color: #C62B0C;
+  }
+
+  /*CONTRASEÑA Y MOSTRAR CONTRASEÑA*/
+.input-pass-contenedor {
+	position: relative;
+}
+.input-pass-contenedor input {
+	padding-right: 48px;
+}
+.btn-ojo {
+	position: absolute;
+	right: 13px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1rem;
+	color: #888;
+	transition: color 0.2s;
+}
+.btn-ojo:hover { color:#555; }
+
+/*OLVIDÉ CONTRASEÑA*/
+.olvide-pass {
+	text-align: right;
+	margin-top: -6px;
+	font-size: 0.83rem;
+}
+
+/*BARRA DE SEGURIDAD*/
+.barra-seguridad {
+	height: 5px;
+	background: #ebebeb;
+	border-radius: 10px;
+	margin-top: 6px;
+	overflow: hidden;
+}
+.barra-progreso {
+	height: 100%;
+	width: 0%;
+	border-radius: 10px;
+	transition: width 0.3s, background 0.3s;
+}
+.texto-seguridad {
+	font-size: 0.76rem;
+	font-weight: 700;
+	margin-top: 3px;
+	display: block;
+}
+
+/*CAJA DE CHECKBOX DE TERMINOS*/
+.campo-check {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	font-size: 0.83rem;
+	color: #777;
+	line-height: 1.5;
+}
+.campo-check input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	margin-top: 2px;
+	accent-color: #C62B0C;
+}
+
+/*BOTON PRINCIPAL*/
+.btn-auth {
+	background: #C62B0C;
+	color: white;
+	border: 2px solid #C62B0C;
+	padding: 13px;
+	border-radius: 10px;
+	font-size: 1rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+	width: 100%;
+	margin-top: 4px;
+}
+.btn-auth:hover {
+	background: white;
+	color: #C62B0C;
+}
+
+/*MENSAJE DE ERROR*/
+.mensaje-error {
+	background: #ffeaea;
+	border: 1px solid #f5c6c6;
+	color: #C62B0C;
+	padding: 11px 15px;
+	border-radius: 8px;
+	font-size: 0.88rem;
+}
+.mensaje-exito {
+	background: #eafaf1;
+	border: 1px solid #a9dfbf;
+	color: #1e8449;
+	padding: 11px 15px;
+	border-radius: 8px;
+	font-size: 0.88rem;
+}
+.oculto { display: none !important; }
+
+.texto-legal {
+	font-size: 0.76rem;
+	color: #bbb;
+	text-align: center;
+	line-height: 1.6;
+}
+
+/*RESPONSIVE - movil*/
+@media (max-width: 640px) {
+	.auth-contenedor{
+		grid-template-columns: 1fr; /*UNA SOLA COLUMNA EN MOVILES*/
+	}
+	.auth-izquierda {
+		padding: 30px 24px;
+	}
+	.auth-derecha {
+		padding: 30px 24px;
+	}
+	.link-volver { display: none; }
+}
+
+/*RECUPERAR CONTRASEÑA*/
+.auth-una-columna {
+	grid-template-columns: 1fr;
+	max-width: 480px;
+}
+
+.auth-logo-centrado {
+	text-decoration: none;
+	font-size: 1.8rem;
+	font-weight: 900;
+	font-family: 'Segoe UI', sans-serif;
+	text-align: center;
+	display: block;
+	margin-bottom: 10px;
+}
+.auth-logo-centrado .logo-rojo { color: #C62B0C; }
+.auth-logo-centrado .logo-danes {
+	color: #888;
+	font-weight: 300;
+}
+.recuperar-icono {
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.recuperar-links {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	margin-top: 8px;
+	font-size: 0.88rem;
+}
+

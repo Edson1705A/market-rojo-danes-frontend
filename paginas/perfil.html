@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil — Market Rojo Danés</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+  <link rel="stylesheet" href="../css/productos.css">
+  <link rel="stylesheet" href="../css/cuenta.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="logo-rojo">Rojo</span>
+        <span class="logo-danes"> Danés</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <a href="../index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+    </ul>
+    <div class="nav-acciones" id="navAcciones">
+      <div id="botonesAuth">
+        <button id="btnLogin" onclick="window.location.href='login.html'">Iniciar sesión</button>
+        <button id="btnRegistro" onclick="window.location.href='registro.html'">Regístrate</button>
+      </div>
+      <div id="panelUsuario" class="oculto">
+        <div class="usuario-nav" onclick="toggleMenu()">
+          <div class="usuario-foto" id="fotoNav"></div>
+          <span class="usuario-nombre" id="nombreNav"></span>
+          <span class="menu-hamburguesa">☰</span>
+        </div>
+        <div class="menu-desplegable oculto" id="menuDesplegable">
+          <a href="perfil.html">👤 Mi perfil</a>
+          <a href="pedidos.html">📦 Mis pedidos</a>
+          <div class="menu-separador"></div>
+          <a href="#" onclick="cerrarSesion()" class="menu-salir">🚪 Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CINTA ROJA -->
+  <div class="productos-header">
+    <h1>Mi <span class="texto-rojo">perfil</span></h1>
+    <p>Gestiona tu información personal</p>
+  </div>
+  
+  <!-- LAYOUT: sidebar izquierdo fijo + contenido derecho -->
+  <div class="cuenta-layout">
+
+    <aside class="cuenta-sidebar">
+      <div class="cuenta-avatar" id="avatarPerfil"></div>
+      <h3 id="nombrePerfil">—</h3>
+      <p id="correoPerfil">—</p>
+      <nav class="cuenta-nav">
+        <a href="perfil.html" class="activo">👤 Mi perfil</a>
+        <a href="pedidos.html">📦 Mis pedidos</a>
+        <a href="#" onclick="cerrarSesion()" class="salir">🚪 Cerrar sesión</a>
+      </nav>
+    </aside>
+
+    <div class="cuenta-contenido" id="cuentaContenidoInner">
+      <h2>Información personal</h2>
+      <p class="cuenta-subtitulo">Actualiza tus datos de contacto</p>
+
+      <div id="mensajeError" class="mensaje-error oculto"></div>
+      <div id="mensajeExito" class="mensaje-exito oculto"></div>
+
+      <form id="formPerfil" onsubmit="return false;">
+        <div class="fila-doble">
+          <div class="campo-grupo">
+            <label for="inputNombre">Nombre completo</label>
+            <input type="text" id="inputNombre">
+          </div>
+          <div class="campo-grupo">
+            <label for="inputUsername">Nombre de usuario</label>
+            <input type="text" id="inputUsername" disabled>
+          </div>
+        </div>
+        <div class="fila-doble">
+          <div class="campo-grupo">
+            <label for="inputCorreo">Correo electrónico</label>
+            <input type="email" id="inputCorreo" disabled>
+          </div>
+          <div class="campo-grupo">
+            <label for="inputTelefono">Teléfono</label>
+            <input type="tel" id="inputTelefono" placeholder="+51 999 999 999">
+          </div>
+        </div>
+        <div class="cuenta-acciones">
+          <button class="btn-auth" onclick="guardarPerfil()">Guardar cambios</button>
+        </div>
+      </form>
+
+      <hr style="border:none; border-top:1px solid var(--borde); margin:30px 0;">
+      <h2>Miembro desde</h2>
+      <p class="cuenta-subtitulo" id="fechaRegistroPerfil">—</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Rojo Danés. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btnCarrito">🛒<span id="contadorCarrito"></span></button>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/checkout.js"></script>
+  <script src="../js/perfil.js"></script>
+</body>
+</html>

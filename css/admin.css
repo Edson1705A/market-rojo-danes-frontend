@@ -1,0 +1,243 @@
+/* LOGIN */
+#pantallaLogin {
+  min-height: 100vh;
+  background: var(--fondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.admin-login-box {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+.admin-login-logo {
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.admin-login-sub {
+  text-align: center;
+  color: #999;
+  font-size: 0.88rem;
+  margin-bottom: 24px;
+}
+
+/* FILTROS */
+.admin-filtros {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px;
+  background: white;
+  border-bottom: 1px solid var(--borde);
+  flex-wrap: wrap;
+}
+.admin-filtro {
+  padding: 8px 18px;
+  border: 2px solid var(--borde);
+  background: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #666;
+}
+.admin-filtro:hover { border-color: #aaa; color: #333; }
+
+.admin-filtro[data-estado="todos"].activo      { background: var(--rojo); color: white; border-color: var(--rojo); }
+.admin-filtro[data-estado="procesando"].activo  { background: #2471a3;    color: white; border-color: #2471a3; }
+.admin-filtro[data-estado="por-recoger"].activo { background: #d68910;    color: white; border-color: #d68910; }
+.admin-filtro[data-estado="entregado"].activo   { background: #1e8449;    color: white; border-color: #1e8449; }
+.admin-filtro[data-estado="cancelado"].activo   { background: #c0392b;    color: white; border-color: #c0392b; }
+
+/* META */
+.admin-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  font-size: 0.88rem;
+  color: #888;
+}
+.admin-refresh {
+  background: white;
+  border: 1px solid var(--borde);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.admin-refresh:hover { border-color: var(--rojo); color: var(--rojo); }
+
+/* LISTA */
+.admin-lista {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px 60px;
+}
+
+/* TARJETA ADMIN */
+.admin-card {
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.admin-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--borde);
+}
+.admin-card-left { display: flex; flex-direction: column; gap: 3px; }
+.admin-pedido-id { font-weight: 700; font-size: 0.95rem; }
+.admin-pedido-cliente { font-size: 0.82rem; color: var(--rojo); font-weight: 600; }
+.admin-pedido-fecha { font-size: 0.78rem; color: #aaa; }
+.admin-pedido-pago { font-size: 0.82rem; color: #888; margin-top: 2px; }
+
+.admin-card-items {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.admin-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.admin-total { font-weight: 800; color: var(--rojo); font-size: 1rem; }
+
+/* ACCIONES DE ESTADO */
+.admin-acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-estado {
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 2px solid;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+}
+.btn-estado-recoger {
+  border-color: #d68910;
+  color: #d68910;
+}
+.btn-estado-recoger:hover { background: #fff5e6; }
+
+.btn-estado-entregado {
+  border-color: #1e8449;
+  color: #1e8449;
+}
+.btn-estado-entregado:hover { background: #eafaf1; }
+
+.btn-estado-cancelado {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+.btn-estado-cancelado:hover { background: #fdecea; }
+
+/* VACÍO */
+.admin-vacio {
+  text-align: center;
+  padding: 60px 20px;
+  color: #bbb;
+  font-size: 0.95rem;
+}
+.admin-vacio .icono { font-size: 3rem; margin-bottom: 14px; }
+
+@media (max-width: 600px) {
+  .admin-lista { padding: 12px 14px 40px; }
+  .admin-filtros { padding: 12px 14px; }
+  .admin-acciones { width: 100%; }
+  .btn-estado { flex: 1; text-align: center; }
+}
+
+/* TABS */
+.admin-tabs {
+  display: flex;
+  background: white;
+  border-bottom: 2px solid var(--borde);
+}
+.admin-tab {
+  padding: 14px 28px;
+  border: none;
+  background: transparent;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+.admin-tab:hover { color: var(--rojo); }
+.admin-tab.activo { color: var(--rojo); border-bottom-color: var(--rojo); }
+
+/* TARJETAS DE USUARIO */
+.usuario-card {
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.usuario-card.bloqueado { opacity: 0.65; border-color: #c0392b; }
+.usuario-info-admin { display: flex; align-items: center; gap: 14px; flex: 1; }
+.usuario-avatar-admin {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--rojo);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.usuario-datos-admin { display: flex; flex-direction: column; gap: 2px; }
+.usuario-nombre-admin { font-weight: 700; font-size: 0.95rem; }
+.usuario-meta { font-size: 0.8rem; color: #888; }
+.usuario-ids { font-size: 0.75rem; color: #bbb; }
+.badge-bloqueado {
+  background: #fdecea; color: #c0392b;
+  font-size: 0.7rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 20px;
+  margin-left: 6px;
+}
+.btn-bloquear {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 2px solid;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: white;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-bloquear-si  { border-color: #c0392b; color: #c0392b; }
+.btn-bloquear-si:hover  { background: #fdecea; }
+.btn-bloquear-no  { border-color: #1e8449; color: #1e8449; }
+.btn-bloquear-no:hover  { background: #eafaf1; }

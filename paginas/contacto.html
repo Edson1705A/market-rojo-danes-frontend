@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Market Rojo Danés</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+  <link rel="stylesheet" href="../css/productos.css">
+  <link rel="stylesheet" href="../css/contacto.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="logo-rojo">Rojo</span>
+        <span class="logo-danes"> Danés</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <a href="../index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="contacto.html" class="nav-activo">Contacto</a>
+    </ul>
+    <div class="nav-acciones" id="navAcciones">
+      <div id="botonesAuth">
+        <button id="btnLogin" onclick="window.location.href='login.html'">Iniciar sesión</button>
+        <button id="btnRegistro" onclick="window.location.href='registro.html'">Regístrate</button>
+      </div>
+      <div id="panelUsuario" class="oculto">
+        <div class="usuario-nav" onclick="toggleMenu()">
+          <div class="usuario-foto" id="fotoNav"></div>
+          <span class="usuario-nombre" id="nombreNav"></span>
+          <span class="menu-hamburguesa">☰</span>
+        </div>
+        <div class="menu-desplegable oculto" id="menuDesplegable">
+          <a href="perfil.html">👤 Mi perfil</a>
+          <a href="pedidos.html">📦 Mis pedidos</a>
+          <div class="menu-separador"></div>
+          <a href="#" onclick="cerrarSesion()" class="menu-salir">🚪 Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="productos-header">
+    <h1>Hablemos <span class="texto-rojo">contigo</span></h1>
+    <p>¿Dudas, sugerencias o reclamos? Estamos para ayudarte.</p>
+  </div>
+
+  <div class="contacto-layout">
+
+    <div class="contacto-info">
+      <h3>Información de contacto</h3>
+      <div class="contacto-item">
+        <div class="contacto-icono">📍</div>
+        <div>
+          <h4>Dirección</h4>
+          <p>Calle Colón Nº112 - Chincha Alta</p>
+        </div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-icono">📞</div>
+        <div>
+          <h4>Teléfono</h4>
+          <p>+51 952 822 589</p>
+        </div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-icono">✉️</div>
+        <div>
+          <h4>Correo</h4>
+          <p>contacto@rojodanes.com</p>
+        </div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-icono">🕒</div>
+        <div>
+          <h4>Horario de atención</h4>
+          <p>Lunes a sábado: 7:00 am – 10:00 pm</p>
+          <p>Domingo: 7:30 am – 10:00 pm</p>
+        </div>
+      </div>
+      <div class="contacto-redes">
+        <a href="https://www.facebook.com/Rojodanes.pe" title="Facebook">📘</a>
+        <a href="https://www.instagram.com/rojodanes?igsh=eWgzYjA3b2pvOGYx" title="Instagram">📷</a>
+        <a href="https://wa.me/51952822589" title="WhatsApp">💬</a>
+      </div>
+    </div>
+
+    <div class="contacto-form">
+      <h3>Envíanos un mensaje</h3>
+      <p>Te responderemos lo antes posible.</p>
+
+      <div id="mensajeError" class="mensaje-error oculto"></div>
+      <div id="mensajeExito" class="mensaje-exito oculto"></div>
+
+      <form id="formContacto" onsubmit="return false;">
+        <div class="fila-doble">
+          <div class="campo-grupo">
+            <label for="inputNombre">Nombre completo</label>
+            <input type="text" id="inputNombre" placeholder="Tu nombre">
+          </div>
+          <div class="campo-grupo">
+            <label for="inputCorreo">Correo electrónico</label>
+            <input type="email" id="inputCorreo" placeholder="ejemplo@correo.com">
+          </div>
+        </div>
+        <div class="campo-grupo">
+          <label for="inputAsunto">Asunto</label>
+          <select id="inputAsunto">
+            <option value="consulta">Consulta general</option>
+            <option value="pedido">Sobre un pedido</option>
+            <option value="reclamo">Reclamo o queja</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        <div class="campo-grupo">
+          <label for="inputMensaje">Mensaje</label>
+          <textarea id="inputMensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+        </div>
+        <button class="btn-auth" id="btnEnviarContacto" onclick="enviarContacto()">
+          Enviar mensaje
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Rojo Danés. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btnCarrito">🛒<span id="contadorCarrito"></span></button>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/checkout.js"></script>
+  <script src="../js/contacto.js"></script>
+</body>
+</html>

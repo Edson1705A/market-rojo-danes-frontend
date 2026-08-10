@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis pedidos — Market Rojo Danés</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+  <link rel="stylesheet" href="../css/productos.css">
+  <link rel="stylesheet" href="../css/cuenta.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="logo-rojo">Rojo</span>
+        <span class="logo-danes"> Danés</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <a href="../index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+    </ul>
+    <div class="nav-acciones" id="navAcciones">
+      <div id="botonesAuth">
+        <button id="btnLogin" onclick="window.location.href='login.html'">Iniciar sesión</button>
+        <button id="btnRegistro" onclick="window.location.href='registro.html'">Regístrate</button>
+      </div>
+      <div id="panelUsuario" class="oculto">
+        <div class="usuario-nav" onclick="toggleMenu()">
+          <div class="usuario-foto" id="fotoNav"></div>
+          <span class="usuario-nombre" id="nombreNav"></span>
+          <span class="menu-hamburguesa">☰</span>
+        </div>
+        <div class="menu-desplegable oculto" id="menuDesplegable">
+          <a href="perfil.html">👤 Mi perfil</a>
+          <a href="pedidos.html">📦 Mis pedidos</a>
+          <div class="menu-separador"></div>
+          <a href="#" onclick="cerrarSesion()" class="menu-salir">🚪 Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CINTA ROJA -->
+  <div class="productos-header">
+    <h1>Mis <span class="texto-rojo">pedidos</span></h1>
+    <p>Revisa el estado e historial de tus compras</p>
+  </div>
+
+  <!-- LAYOUT -->
+  <div class="cuenta-layout">
+
+    <aside class="cuenta-sidebar">
+      <div class="cuenta-avatar" id="avatarPerfil"></div>
+      <h3 id="nombrePerfil">—</h3>
+      <p id="correoPerfil">—</p>
+      <nav class="cuenta-nav">
+        <a href="perfil.html">👤 Mi perfil</a>
+        <a href="pedidos.html" class="activo">📦 Mis pedidos</a>
+        <a href="#" onclick="cerrarSesion()" class="salir">🚪 Cerrar sesión</a>
+      </nav>
+    </aside>
+
+    <div class="cuenta-contenido">
+      <h2>Historial de pedidos</h2>
+      <p class="cuenta-subtitulo" id="contadorPedidos">Cargando...</p>
+      <div id="listaPedidos"></div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Rojo Danés. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btnCarrito">🛒<span id="contadorCarrito"></span></button>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/checkout.js"></script>
+  <script src="../js/pedidos.js"></script>
+</body>
+</html>

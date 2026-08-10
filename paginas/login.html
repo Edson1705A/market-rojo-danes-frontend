@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Iniciar Sesión - Market Rojo Danés</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="pagina-auth">
+	<div class="auth-contenedor">
+		<!-- Parte Izquierda -->
+		<div class="auth-izquierda">
+			<a href="../index.html" class="auth-logo">
+				<span class="logo-rojo">Rojo</span>
+				<span class="logo-danes">Danés</span>
+			</a>
+			<p class="auth-bienvenida">
+				Bienvenido de nuevo.<br>
+				Ingresa a tu cuenta.
+			</p>
+
+			<!-- Botón de Google -->
+			<button class="btn-social btn-google" onclick="authGoogle('login')">
+				<img src="https://www.google.com/favicon.ico" alt="Google" width="20">
+				Continuar con Google
+			</button>
+
+			<!-- Botón de Facebook -->
+			<button class="btn-social btn-facebook" onclick="authFacebook('login')">
+				<img src="https://www.facebook.com/favicon.ico" alt="Facebook" width="20">
+				Continuar con Facebook
+			</button>
+
+			<!--Separador-->
+			<div class="separador">
+				<span>o ingresa con tu correo</span>
+			</div>
+
+			<!-- Registro -->
+			<p class="texto-cambio">
+				¿No tienes una cuenta?
+				<a href="registro.html" class="link-auth">Regístrate ahora</a>
+			</p>
+
+			<!-- Volver al Inicio -->
+			<a href="../index.html" class="link-volver">◄ Volver a la tienda</a>
+		</div>
+
+		<!-- Lado derecho - formulario de inicio -->
+		<div class="auth-derecha">
+			<h1>Iniciar Sesión</h1>
+			<p class="auth-subtitulo">Ingresa tus datos para continuar</p>
+			<!-- Mensaje de error oculto -->
+			<div id="mensajeError" class="mensaje-error oculto">
+				⚠️ Correo o contraseña incorrectos. Vuelva a intentarlo.
+			</div>
+
+			<!-- usuario, correo o telefono -->
+			<div class="campo-grupo">
+				<label for="inputUsuario">Correo, teléfono o usuario</label>
+				<input type="text" id="inputUsuario" placeholder="ejemplo@correo.com" autocomplete="username">
+			</div>
+
+			<!-- usuario, correo o telefono -->
+			<div class="campo-grupo">
+				<label for="inputPassword">Contraseña</label>
+				<div class="input-pass-contenedor">
+					<input type="password" id="inputPassword" placeholder="********" autocomplete="current-password">
+					<button class="btn-ojo" onclick="verPassword('inputPassword')" type="button">👁</button>
+				</div>
+			</div>
+
+			<!-- olvido contraseña -->
+			<div class="olvide-pass">
+				<a href="recuperar.html" class="link-auth">
+					¿Olvidaste tu contraseña?
+				</a>
+			</div>
+
+			<button class="btn-auth" onclick="iniciarSesion()">
+				Iniciar sesión
+			</button>
+
+			<p class="texto-legal">
+				Al ingresar aceptas nuestros
+				<a href="#" class="link-auth">Términos de uso</a> y
+				<a href="#" class="link-auth">Política de privacidad</a>
+			</p>
+		</div>
+	</div>
+	<script src="../js/api.js"></script>
+	<script src="../js/auth.js"></script>
+
+</body>
+</html>

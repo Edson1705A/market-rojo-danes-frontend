@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Market Rojo Danés</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/productos.css">
+  <link rel="stylesheet" href="../css/cuenta.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <div id="pantallaLogin" style="display:none;"></div>
+
+  <div id="panelAdmin">
+    <nav id="navbar">
+      <div class="logo">
+        <a href="../index.html" style="text-decoration:none;">
+          <span class="logo-rojo">Rojo</span>
+          <span class="logo-danes"> Danés</span>
+        </a>
+      </div>
+      <span style="color:white; font-size:0.9rem; font-weight:600;">
+        🔧 Panel de administración
+      </span>
+      <button onclick="cerrarAdmin()" style="
+        background: rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.4);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.85rem;
+      ">Cerrar sesión</button>
+    </nav>
+
+    <div class="productos-header">
+      <h1>Panel de <span class="texto-rojo">administración</span></h1>
+      <p>Gestiona pedidos y usuarios del sistema</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="admin-tabs">
+      <button class="admin-tab activo" id="tabPedidos" onclick="cambiarTab('pedidos')">📦 Pedidos</button>
+      <button class="admin-tab" id="tabUsuarios" onclick="cambiarTab('usuarios')">👥 Usuarios</button>
+    </div>
+
+    <!-- SECCIÓN PEDIDOS -->
+    <div id="seccionPedidos">
+      <div class="admin-filtros">
+        <button class="admin-filtro activo" data-estado="todos" onclick="filtrarAdmin('todos', this)">Todos</button>
+        <button class="admin-filtro" data-estado="procesando" onclick="filtrarAdmin('procesando', this)">Procesando</button>
+        <button class="admin-filtro" data-estado="por-recoger" onclick="filtrarAdmin('por-recoger', this)">Por recoger</button>
+        <button class="admin-filtro" data-estado="entregado" onclick="filtrarAdmin('entregado', this)">Entregado</button>
+        <button class="admin-filtro" data-estado="cancelado" onclick="filtrarAdmin('cancelado', this)">Cancelado</button>
+      </div>
+      <div class="admin-meta">
+        <span id="adminContador">Cargando...</span>
+        <button class="admin-refresh" onclick="cargarTodosPedidos()">↻ Actualizar</button>
+      </div>
+      <div id="adminListaPedidos" class="admin-lista"></div>
+    </div>
+
+    <!-- SECCIÓN USUARIOS -->
+    <div id="seccionUsuarios" style="display:none;">
+      <div class="admin-meta">
+        <span id="adminContadorUsuarios">Cargando...</span>
+      </div>
+      <div id="adminListaUsuarios" class="admin-lista"></div>
+    </div>
+
+  </div>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>

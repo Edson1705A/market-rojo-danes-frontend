@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas — Market Rojo Danés</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+  <link rel="stylesheet" href="../css/productos.css">
+</head>
+<body>
+
+  <!-- NAVEGACION -->
+  <nav id="navbar">
+    <div class="logo">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="logo-rojo">Rojo</span>
+        <span class="logo-danes"> Danés</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <a href="../index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="ofertas.html" class="nav-activo">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+    </ul>
+    <div class="nav-acciones" id="navAcciones">
+      <div id="botonesAuth">
+        <button id="btnLogin" onclick="window.location.href='login.html'">Iniciar sesión</button>
+        <button id="btnRegistro" onclick="window.location.href='registro.html'">Regístrate</button>
+      </div>
+      <div id="panelUsuario" class="oculto">
+        <div class="usuario-nav" onclick="toggleMenu()">
+          <div class="usuario-foto" id="fotoNav"></div>
+          <span class="usuario-nombre" id="nombreNav"></span>
+          <span class="menu-hamburguesa">☰</span>
+        </div>
+        <div class="menu-desplegable oculto" id="menuDesplegable">
+          <a href="perfil.html">👤 Mi perfil</a>
+          <a href="pedidos.html">📦 Mis pedidos</a>
+          <div class="menu-separador"></div>
+          <a href="#" onclick="cerrarSesion()" class="menu-salir">🚪 Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ENCABEZADO -->
+  <div class="productos-header">
+    <h1>Ofertas <span class="texto-rojo">vigentes</span></h1>
+    <p>Aprovecha los descuentos antes de que se agoten</p>
+  </div>
+  
+  <!-- FILTRADO DE OFERTAS -->
+  <div class="ofertas-filtros">
+    <button class="oferta-filtro activo-oferta" onclick="filtrarOfertas('todas', this)">
+      Todas
+    </button>
+    <button class="oferta-filtro" onclick="filtrarOfertas('descuento', this)">
+      Con descuento
+    </button>
+    <button class="oferta-filtro" onclick="filtrarOfertas('pocas', this)">
+      Últimas unidades
+    </button>
+    <button class="oferta-filtro" onclick="filtrarOfertas('temporal', this)">
+      Por tiempo limitado
+    </button>
+  </div>
+
+  <!-- CONTADOR -->
+  <div class="productos-contenido" style="max-width:1300px; margin:0 auto;">
+    <div class="productos-meta">
+      <span id="contadorResultados">Cargando ofertas...</span>
+    </div>
+    <div id="grilla-productos"></div>
+  </div>
+
+  <footer>
+    <p>© 2026 Rojo Danés. Todos los derechos reservados.</p>
+  </footer>
+
+  <button id="btnCarrito">
+    🛒
+    <span id="contadorCarrito"></span>
+  </button>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/checkout.js"></script>
+  <script src="../js/ofertas.js"></script>
+
+</body>
+</html>

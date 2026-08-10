@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Recuperar Contraseña - Market Rojo Danés</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="pagina-auth">
+	<div class="auth-contenedor auth-una-columna">
+		<div class="auth-derecha" style="width: 100%;">
+			<a href="../index.html" class="auth-logo-centrado">
+				<span class="logo-rojo">Rojo</span>
+				<span class="logo-danes"> Danés</span>
+			</a>
+			<div class="recuperar-icono">🔐</div>
+			<h1>¿Olvidaste tu contraseña?</h1>
+			<p class="auth-subtitulo">
+				Ingresa tu correo. Si está registrado,
+  				el personal te contactará para restablecer tu contraseña.
+			</p>
+
+			<!-- MENSAJE ERROR -->
+			<div id="mensajeError" class="mensaje-error oculto"></div>
+			<div id="mensajeExito" class="mensaje-exito oculto"></div>
+
+			<!-- CORREO RECUPERACION -->
+			<div class="campo-grupo">
+				<label for="inputCorreo">Correo electrónico</label>
+				<input 
+					type="email" 
+					id="inputCorreo"
+					placeholder="ejemplo@correo.com" 
+					autocomplete="email">
+			</div>
+
+			<!-- ENVIAR -->
+			<button class="btn-auth" onclick="recuperarPassword()">
+				Enviar enlace de recuperación
+			</button>
+
+			<!-- ENLACES INFERIORES -->
+			<div class="recuperar-links">
+				<a href="login.html" class="link-auth">◄ Volver al inicio de sesión</a>
+				<a href="registro.html" class="link-auth">¿No tienes cuenta? Regístrate</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/api.js"></script>
+	<script src="../js/auth.js"></script>
+
+</body>
+</html>

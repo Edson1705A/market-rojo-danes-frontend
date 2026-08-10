@@ -1,0 +1,200 @@
+/* OVERLAY */
+#fondoCheckout {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1100;
+}
+#fondoCheckout.visible { display: block; }
+
+/* MODAL */
+#modalCheckout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  width: 92%;
+  max-width: 480px;
+  max-height: 88vh;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+  z-index: 1101;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  overflow: hidden;
+}
+#modalCheckout.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: all;
+}
+
+/* CABECERA */
+.checkout-header {
+  background: var(--rojo);
+  color: white;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.checkout-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.checkout-cerrar {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.checkout-cerrar:hover { background: rgba(255,255,255,0.2); }
+
+/* CUERPO SCROLLEABLE */
+.checkout-cuerpo {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* SECCIÓN */
+.checkout-seccion {
+  margin-bottom: 20px;
+}
+.checkout-seccion:last-child { margin-bottom: 0; }
+.checkout-seccion h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+/* RESUMEN DE ITEMS */
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--borde);
+  font-size: 0.9rem;
+  gap: 8px;
+}
+.checkout-item:last-child { border-bottom: none; }
+.checkout-item-nombre { color: var(--texto); flex: 1; }
+.checkout-item-cant {
+  color: #888;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.checkout-item-precio {
+  font-weight: 700;
+  color: var(--rojo);
+  white-space: nowrap;
+}
+
+/* TOTAL */
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0 4px;
+  border-top: 2px solid var(--borde);
+  margin-top: 4px;
+}
+.checkout-total span:first-child { font-size: 0.9rem; font-weight: 600; }
+.checkout-total span:last-child  { font-size: 1.15rem; font-weight: 800; color: var(--rojo); }
+.checkout-aviso {
+  font-size: 0.75rem;
+  color: #bbb;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* MÉTODO DE PAGO */
+.pago-opciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.pago-opcion {
+  border: 2px solid var(--borde);
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: white;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--texto);
+}
+.pago-opcion:hover {
+  border-color: var(--rojo);
+  background: #ffeaea;
+  color: var(--rojo);
+}
+.pago-opcion.seleccionado {
+  border-color: var(--rojo);
+  background: #ffeaea;
+  color: var(--rojo);
+  font-weight: 700;
+}
+.pago-opcion .pago-icono { font-size: 1.6rem; display: block; margin-bottom: 6px; }
+
+/* NOTA ADICIONAL */
+.checkout-nota {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--borde);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', sans-serif;
+  outline: none;
+  resize: none;
+  transition: border-color 0.2s;
+}
+.checkout-nota:focus { border-color: var(--rojo); }
+
+/* PIE FIJO */
+.checkout-footer {
+  padding: 16px 20px;
+  border-top: 2px solid var(--borde);
+  background: #fafafa;
+  flex-shrink: 0;
+}
+.btn-confirmar {
+  width: 100%;
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-confirmar:hover { background: #1da851; }
+.btn-confirmar:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.checkout-error {
+  font-size: 0.82rem;
+  color: #c0392b;
+  margin-top: 8px;
+  text-align: center;
+  min-height: 18px;
+}
